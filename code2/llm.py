@@ -4,7 +4,6 @@ import openai
 from datasets import load_dataset
 
 models_to_test = [
-    "deepseek-v2",
     "gpt-4o-mini",
     "qwen2.5-coder-32b-instruct"
 ]
