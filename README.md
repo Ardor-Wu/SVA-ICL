@@ -12,6 +12,11 @@ Learning and Information Fusion". Please refer to the paper for the experimental
 1. The `dataset` folder contains all the data used in the experiments for RQ1-RQ5.
 2. The `dataset2` and `dataset3` folders store the additional two random samples used in the discussion section.
 3. Due to the large size of the datasets, we have stored them in Google Drive: [Google Drive Link](https://drive.google.com/drive/folders/1endc4u6qjaaOUJ0Sxks2PYGYeDC9mJ5p?usp=drive_link).
+4. You can remove CVEs from `dataset2` that overlap with Big-Vul by running `filter_dataset_by_year.py`:
+
+   ```bash
+   python filter_dataset_by_year.py --src dataset2 --dest dataset2_filtered --year-min 2011 --year-max 2019
+   ```
 
 ## About the experimental results in the paper:
 
