@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-YEAR_MIN = 2011
+YEAR_MIN = 2000
 YEAR_MAX = 2019
 
 SRC_DIR = 'dataset2'
@@ -27,6 +27,7 @@ for split in splits:
 
     idx = df_filtered.index
 
+
     # helper to filter csvs by index
     def filter_csv(name):
         path = os.path.join(src_split, name)
@@ -35,6 +36,7 @@ for split in splits:
         df = pd.read_csv(path, header=None)
         df_filtered_csv = df.loc[idx]
         df_filtered_csv.to_csv(os.path.join(dst_split, name), index=False, header=False)
+
 
     filter_csv(f'{split}_code.csv')
     filter_csv(f'{split}_ast.csv')
@@ -48,3 +50,4 @@ for split in splits:
         df = pd.read_excel(all_xlsx)
         df_filtered_xlsx = df.loc[idx]
         df_filtered_xlsx.to_excel(os.path.join(dst_split, f'{split}_all.xlsx'), index=False)
+
